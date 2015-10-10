@@ -1,0 +1,34 @@
+---
+
+:backends: yaml
+
+:yaml:
+  :datadir: "/"
+
+# Hiera lookiup
+# 
+# Some lookup values are set inside previous hiera files:
+#
+# role - Role should be set in clientcert
+
+:hierarchy:
+  - "etc/puppetlabs/code/environments/%{::environment}/hieradata/domain/%{::domain}"
+  - "vagrant/puppet/environments/%{::environment}/hieradata/domain/%{::domain}"
+
+  - "etc/puppetlabs/code/environments/%{::environment}/hieradata/os/%{::osfamily}/%{::operatingsystem}/%{::operatingsystemmajrelease}"
+  - "vagrant/puppet/environments/%{::environment}/hieradata/os/%{::osfamily}/%{::operatingsystem}/%{::operatingsystemmajrelease}"
+
+  - "etc/puppetlabs/code/environments/%{::environment}/hieradata/tier/%{::tier}"
+  - "vagrant/puppet/environments/%{::environment}/hieradata/tier/%{::tier}"
+
+  - "etc/puppetlabs/code/environments/%{::environment}/hieradata/role/%{::role}"
+  - "vagrant/puppet/environments/%{::environment}/hieradata/role/%{::role}"
+
+  - "etc/puppetlabs/code/environments/%{::environment}/hieradata/application/%{::application}"
+  - "vagrant/puppet/environments/%{::environment}/hieradata/application/%{::application}"
+
+  - "etc/puppetlabs/code/environments/%{::environment}/hieradata/global"
+  - "vagrant/puppet/environments/%{::environment}/hieradata/global"
+
+  - "etc/puppetlabs/code/environments/%{::environment}/hieradata/common"
+  - "vagrant/puppet/environments/%{::environment}/hieradata/common"
