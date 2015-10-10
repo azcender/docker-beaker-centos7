@@ -20,7 +20,7 @@ ENV PATH /opt/puppetlabs/bin:$PATH
 
 COPY hiera.yaml /etc/
 
-COPY environment/hieradata /etc/puppetlabs/code/environments/production/hieradata
+COPY environments/hieradata /etc/puppetlabs/code/environments/production/hieradata
 
 #WORKDIR /tmp
 
