@@ -22,6 +22,8 @@ COPY hiera.yaml /etc/
 
 COPY environments/hieradata /etc/puppetlabs/code/environments/production/hieradata
 
+COPY environments/modules /etc/puppetlabs/modules
+
 #WORKDIR /tmp
 
 #COPY environment/manifests/site.pp /tmp/
