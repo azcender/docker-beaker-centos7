@@ -18,7 +18,7 @@ ENV PATH /opt/puppetlabs/bin:$PATH
 
 #COPY tomcat.txt /etc/facter/facts.d/
 
-COPY hiera.yaml /etc/puppet/
+COPY hiera.yaml /etc/
 
 COPY environments/hieradata /etc/puppetlabs/code/environments/production/hieradata
 
