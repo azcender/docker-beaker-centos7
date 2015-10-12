@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:6
 
 MAINTAINER Bryan Belanger bbelanger@azcender.com
 
