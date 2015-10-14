@@ -2,10 +2,17 @@ FROM centos:6
 
 MAINTAINER Bryan Belanger bbelanger@azcender.com
 
+RUN yum clean all
+RUN yum install -y sudo openssh-server openssh-clients curl ntpdate git
 RUN yum -y upgrade
 #RUN yum -y localinstall http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm;
 #RUN yum -y install puppet-agent
 #RUN mkdir -p /etc/facter/facts.d/
+
+RUN rpm --replacepkgs -ivh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
+RUN yum -y install puppet
+RUN rpm -q curl
+
 
 #RUN apt-get -y update; \
 #    curl -O http://apt.puppetlabs.com/puppetlabs-release-pc1-jessie.deb; \
