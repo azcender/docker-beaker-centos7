@@ -11,6 +11,7 @@ RUN yum -y upgrade
 
 RUN rpm --replacepkgs -ivh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
 RUN yum -y install puppet
+RUN yum -y install tar
 RUN rpm -q curl
 
 
