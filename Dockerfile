@@ -31,6 +31,8 @@ COPY environments/hieradata /etc/puppetlabs/code/environments/production/hierada
 
 COPY environments/modules /etc/puppet/modules
 
+RUN yum -y install tar
+
 #WORKDIR /tmp
 
 #COPY environment/manifests/site.pp /tmp/
